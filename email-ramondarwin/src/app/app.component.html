@@ -3,19 +3,19 @@
   <form class="jumbotron">
       <h3 class="display-4"> EMAIL </h3>
       <div class="form-group">
-        <label for="destinatario"> < - A</label>
-        <input name="destinatario" #newdestinatario class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="oggetto"> < - OGGETTO</label>
-        <input name="oggetto" #newoggetto class="form-control">
-      </div>
-      <div class="form-group">
-        <label for="messaggio"></label>
-        <input name="messaggio" #newmessaggio class="form-control">
-      </div>
-      <button (click)="Invia(newtitle, newlink)" class="btn btn-primary">
+        
+        <input type = "text" #destinatario > <label>destinatario</label>>
+        <input type = "text" #oggetto > <label>oggetto</label>>
+        <input type = "text" #messaggio > <label>messaggio</label>>
+   
+      <button (click)="sendMail(destinatario, oggetto, messaggio)" class="btn btn-primary">
         INVIA
       </button>
+
+      <ul>
+        <li *ngFor = "let e of vettMail">
+          {{e | json}}
+        </li>
+      </ul>
    
    

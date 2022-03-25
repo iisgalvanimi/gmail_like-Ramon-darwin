@@ -8,12 +8,17 @@ import { Email } from 'models/email.model';
 })
 export class AppComponent {
   title = 'email-ramondarwin';
-  emails:Email[];   // <-- component property
-  constructor(){
-    this.emails = [
-      new Email('provaa', 'oggetto', 'messaggio'),
-      new Email('Fullstack', 'http://fullstack.io', 'messaggio'),
-      new Email('Angular Homepage', 'http://angular.io', 'messaggio'),
-    ];
-  }
+  vettMail : Email[] = [];
+  //emails:Email[];   // <-- component property
+  
+
+    sendMail(destinatario : HTMLInputElement, oggetto : HTMLInputElement, messaggio : HTMLInputElement) : boolean{
+       console.log(destinatario.value + " " + oggetto.value + " " + messaggio.value + " " );
+       let e = new Email (destinatario.value,oggetto.value,messaggio.value);
+       this.vettMail.push(e);
+       return false;
+
+    }
+
+
 }
