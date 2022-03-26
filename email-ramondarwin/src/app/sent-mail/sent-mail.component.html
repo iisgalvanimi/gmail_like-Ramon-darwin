@@ -10,6 +10,16 @@
 
 <hr>
 
-<p>
-    {{email.messaggio}}
-</p>
+
+<ul>
+  <li *ngIf = "show">
+    <p>
+        {{email.messaggio}}
+    </p>
+  </li>  
+</ul>   
+
+
+<!-- <button (click) = "onShowHide()">MOSTRA</button>  -->
+<button *ngIf = "!show" (click) = "onShowHide()">MOSTRA</button>
+<button *ngIf = "show" (click) = "onShowHide()">NASCONDI</button>

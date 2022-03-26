@@ -7,10 +7,14 @@ import { Email } from 'models/email.model';
   styleUrls: ['./sent-mail.component.css']
 })
 export class SentMailComponent implements OnInit {
-  @Input() email : Email = null!;
-  constructor() { }
-
   ngOnInit(): void {
+
+  }
+  @Input() email : Email = null!;
+  show = false;
+  onShowHide(): boolean{
+    this.show = !this.show;
+    return false;  
   }
 
 }
