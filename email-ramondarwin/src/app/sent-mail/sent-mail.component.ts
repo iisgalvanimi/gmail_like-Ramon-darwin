@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input, OnInit } from '@angular/core';
 import { Email } from 'models/email.model';
 
 @Component({
@@ -11,10 +11,17 @@ export class SentMailComponent implements OnInit {
 
   }
   @Input() email : Email = null!;
+  @HostBinding("class") cssColor = "white";
   show = false;
   onShowHide(): boolean{
     this.show = !this.show;
     return false;  
+  }
+
+  specializza(): boolean{
+    if(this.cssColor == "white") this.cssColor = "yellow";
+    else this.cssColor = "white";
+    return false;
   }
 
 }
